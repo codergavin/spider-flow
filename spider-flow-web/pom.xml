@@ -17,6 +17,30 @@
 			<groupId>org.spiderflow</groupId>
 			<artifactId>spider-flow-core</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.spiderflow</groupId>
+			<artifactId>spider-flow-selenium</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.spiderflow</groupId>
+			<artifactId>spider-flow-mongodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.spiderflow</groupId>
+			<artifactId>spider-flow-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.spiderflow</groupId>
+			<artifactId>spider-flow-ocr</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.spiderflow</groupId>
+			<artifactId>spider-flow-oss</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.spiderflow</groupId>
+			<artifactId>spider-flow-mailbox</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -28,6 +52,17 @@
 					<mainClass>org.spiderflow.SpiderApplication</mainClass>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<!-- 打包时剔除配置文件使用外置配置文件 如果不需要可以去掉 -->
+					<excludes>
+						<exclude>application.properties</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
+
 </project>
